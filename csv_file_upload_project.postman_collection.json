@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "9bec3353-f875-46c8-8f30-06ab33d5f52a",
+		"name": "csv_file_upload_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login_request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "userName",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/feed/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"login"
+					]
+				},
+				"description": "login request consist of hard codded userName and password \nwhere userName = \"userName\"\npassword = \"password\""
+			},
+			"response": []
+		},
+		{
+			"name": "file_upload",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXJOYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZCIsImlhdCI6MTYyNjk2NDg3NCwiZXhwIjoxNjI2OTY4NDc0fQ.qBoSXqQjdEGgE1cpQ9c0LQl_9D-W2F0_RsuxFtO3f0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/sande/Desktop/node/data.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/feed/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXJOYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZCIsImlhdCI6MTYyNjk2NDg3NCwiZXhwIjoxNjI2OTY4NDc0fQ.qBoSXqQjdEGgE1cpQ9c0LQl_9D-W2F0_RsuxFtO3f0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/feed/findAllUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"findAllUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_single_user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXJOYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZCIsImlhdCI6MTYyNjk2NDg3NCwiZXhwIjoxNjI2OTY4NDc0fQ.qBoSXqQjdEGgE1cpQ9c0LQl_9D-W2F0_RsuxFtO3f0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "Daffy Duck",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/feed/findSingleUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"findSingleUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXJOYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZCIsImlhdCI6MTYyNjk2NDg3NCwiZXhwIjoxNjI2OTY4NDc0fQ.qBoSXqQjdEGgE1cpQ9c0LQl_9D-W2F0_RsuxFtO3f0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "Donnald Duck",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "donnaldduck@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/feed/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXJOYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZCIsImlhdCI6MTYyNjk2NDg3NCwiZXhwIjoxNjI2OTY4NDc0fQ.qBoSXqQjdEGgE1cpQ9c0LQl_9D-W2F0_RsuxFtO3f0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "Donnald Duck",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "31",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "donnaldduck01@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/feed/updateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"updateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzZXJOYW1lIiwicGFzc3dvcmQiOiJwYXNzd29yZCIsImlhdCI6MTYyNjk2NDg3NCwiZXhwIjoxNjI2OTY4NDc0fQ.qBoSXqQjdEGgE1cpQ9c0LQl_9D-W2F0_RsuxFtO3f0Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userName",
+							"value": "Donnald Duck",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/feed/deleteUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feed",
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
